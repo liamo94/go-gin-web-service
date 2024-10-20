@@ -1,0 +1,12 @@
+version: '3'
+services:
+  go-web-server:
+    build: .
+    ports:
+      - "8081:8081"
+    environment:
+      - GO_ENV=production
+      - HOST=:8081   # Bind to all interfaces in Docker
+    volumes:
+      - .:/app
+    restart: always
